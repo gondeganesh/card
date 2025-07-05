@@ -1,0 +1,169 @@
+ body {
+        background-image: url('back.jpg'); /* Replace with your actual image file name */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Baloo Bhai 2', cursive;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1.animated-text {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: bold;
+      background: linear-gradient(45deg, #ff6ec4, #7873f5, #4ADEDE, #C4FCEF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      animation: floatText 4s ease-in-out infinite;
+    }
+
+    @keyframes floatText {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .gradient-text {
+      font-family: 'Baloo Bhai 2', cursive;
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      background: linear-gradient(45deg, #ff4ec7, #6b66ff, #00c6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% 200%;
+      animation: colorShift 2s ease infinite;
+    }
+
+    @keyframes colorShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .zoom-in {
+      animation: zoomFadeIn 2s ease forwards;
+    }
+
+    @keyframes zoomFadeIn {
+      from {
+        transform: scale(0.3);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .slide-in {
+      animation: slideInRight 2s ease forwards;
+    }
+
+    .slide-inn {
+      animation: slideInLeft 2s ease forwards;
+    }
+
+    @keyframes slideInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideInLeft {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .NLimage {
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(1, 0, 0, 0.5);
+    }
+
+    .overlay-text {
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+       background: linear-gradient(to right, #ff4ec7, #6b66ff, #00c6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      /* text-shadow: 1px 1px 3px rgba(0,0,0,0.7); */
+      text-align: center;
+      padding: 20px;
+    }
+
+    .reflective-text {
+      font-family: 'Segoe UI', 'Noto Sans Devanagari', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      text-align: center;
+      background: linear-gradient(90deg, #ff512f, #dd2476, #ff512f);
+      background-size: 200% auto;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 7s linear infinite;
+      -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(255, 255, 255, 0.1));
+    }
+
+    @keyframes shine {
+      0% { background-position: 200% center; }
+      100% { background-position: -200% center; }
+    }
+
+    .map-responsive {
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: 10px;
+    }
+
+    .map-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-foreground {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+}
+
+.video-foreground iframe {
+  width: 100vw;
+  height: 56.25vw; /* 16:9 ratio */
+  min-height: 100vh;
+  min-width: 177.77vh; /* 16:9 ratio */
+}
+
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* Adjust for readability */
+  z-index: 0;
+}
